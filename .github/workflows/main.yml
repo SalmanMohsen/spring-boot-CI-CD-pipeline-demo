@@ -29,12 +29,12 @@ jobs:
       run: |
         mvn clean
         mvn -B package --file pom.xml
-
+      
     - name: Build Docker Image
       uses: docker/build-push-action@v4
       with:
         context: .
-        dockerfile: Dockerfile
+        dockerfile: ./Dockerfile
         tags: |
           ${{ env.DOCKERHUB_REPO }}:${{ github.sha }}
           ${{ env.DOCKERHUB_REPO }}:staging
