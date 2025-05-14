@@ -30,14 +30,11 @@ jobs:
         mvn clean
         mvn -B package --file pom.xml
         
-    - name: Upload JAR file
-      uses: actions/upload-artifact@v3
+    - name: Upload target directory
+      uses: actions/upload-artifact@v2
       with:
-        name: app-jar
-        path: target/*.jar
-        
-    - name: Verify JAR Exists
-      run: ls -la target/*.jar
+        name: target-directory
+        path: target
       
     - name: Build Docker Image
       uses: docker/build-push-action@v4
