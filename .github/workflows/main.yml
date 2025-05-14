@@ -60,6 +60,7 @@ jobs:
       uses: docker/build-push-action@v4
       with:
         context: .
+        file: ./Dockerfile
         tags: ${{ env.DOCKERHUB_REPO }}:staging
         push: true
 
