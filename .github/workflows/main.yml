@@ -30,8 +30,11 @@ jobs:
         mvn clean
         mvn -B package --file pom.xml
         
+    - name: List target directory contents
+      run: ls -la target    
+      
     - name: Upload target directory
-      uses: actions/upload-artifact@v2
+      uses: actions/upload-artifact@v3
       with:
         name: target-directory
         path: target
