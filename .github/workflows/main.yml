@@ -34,6 +34,7 @@ jobs:
       uses: docker/build-push-action@v4
       with:
         context: .
+        dockerfile: Dockerfile
         tags: |
           ${{ env.DOCKERHUB_REPO }}:${{ github.sha }}
           ${{ env.DOCKERHUB_REPO }}:staging
