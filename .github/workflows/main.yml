@@ -29,11 +29,13 @@ jobs:
       run: |
         mvn clean
         mvn -B package --file pom.xml
-    - name: Upload target directory
+        
+    - name: Upload JAR file
       uses: actions/upload-artifact@v3
       with:
-        name: target-directory
-        path: target
+        name: app-jar
+        path: target/*.jar
+        
     - name: Verify JAR Exists
       run: ls -la target/*.jar
       
