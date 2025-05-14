@@ -29,6 +29,9 @@ jobs:
       run: |
         mvn clean
         mvn -B package --file pom.xml
+        
+    - name: Verify JAR Exists
+      run: ls -la target/*.jar
       
     - name: Build Docker Image
       uses: docker/build-push-action@v4
