@@ -86,7 +86,6 @@ jobs:
         echo "Deploying staging image to your environment"
         # Add actual deployment commands here (e.g., kubectl, docker-compose)
         # Example: kubectl apply -f k8s/staging-deployment.yaml
-  
 
   production-deployment:
     name: Deploy to Production
