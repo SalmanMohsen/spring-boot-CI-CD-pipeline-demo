@@ -7,6 +7,11 @@ on:
 env:
   DOCKERHUB_REPO: ${{ secrets.DOCKER_HUB_USERNAME }}/spring-boot-ci-cd-pipeline-demo
 
+permissions:
+  issues: write
+  deployments: write
+  checks: read
+
 jobs:
   build-test:
     name: Build and Test
@@ -96,7 +101,7 @@ jobs:
       uses: trstringer/manual-approval@v1
       with:
         secret: ${{ secrets.GITHUB_TOKEN }}
-        approvers: 'SalmanMohsen'
+        approvers: "SalmanMohsen"  # Direct username instead of team
         minimum-approvals: 1
 
   production-deployment:
