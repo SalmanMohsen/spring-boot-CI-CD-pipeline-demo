@@ -3,7 +3,6 @@ name: Spring Boot CI/CD Pipeline
 on:
   push:
     branches: [ "main" ]
-
 env:
   DOCKERHUB_REPO: ${{ secrets.DOCKER_HUB_USERNAME }}/spring-boot-ci-cd-pipeline-demo
 
